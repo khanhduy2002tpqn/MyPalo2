@@ -19,6 +19,215 @@ export function LocalizedHome({ locale }: { locale: Locale }) {
 
 export function AboutPage({ locale }: { locale: Locale }) {
   const t = content[locale];
+  const leaders = [
+    {
+      name: "Nguyễn Thị Kim Hồng",
+      role: "Nhà sáng lập & Tổng Giám đốc",
+      image: "/assets/photos/impact-1.jpg",
+      bio: [
+        "Trong suốt hai thập kỷ qua, chị Kim Hồng đã gắn bó sâu sắc với giáo dục và phát triển xã hội. Chị luôn đồng hành cùng hàng nghìn thanh thiếu niên Việt Nam trên hành trình xây dựng tương lai tự tin và bền vững.",
+        "Trước khi sáng lập Mypalo, chị từng phụ trách các chương trình tạo tác động xã hội tại Việt Nam, kết nối nguồn lực quốc tế với các sáng kiến phát triển nhân lực địa phương."
+      ]
+    },
+    {
+      name: "Bà Minh Châu Nguyễn",
+      role: "Giám đốc Phát triển Toàn cầu | Cố vấn Lãnh đạo",
+      image: "/assets/photos/minh-chau.jpg",
+      bio: [
+        "Bà Minh Châu Nguyễn mang đến cho Mypalo hơn 25 năm kinh nghiệm lãnh đạo quốc tế, đặc biệt trong giáo dục và phát triển cộng đồng.",
+        "Bà từng hợp tác cùng nhiều tổ chức lớn và hỗ trợ các chương trình dành cho thanh thiếu niên Việt Nam, tập trung vào năng lực lãnh đạo, tư duy toàn cầu và phát triển bền vững."
+      ]
+    },
+    {
+      name: "Bà Jocelyn Tran",
+      role: "Doanh nhân & Lãnh đạo kinh doanh | Cố vấn Chiến lược",
+      image: "/assets/photos/impact-2.jpg",
+      bio: [
+        "Bà Jocelyn Tran có hơn 35 năm kinh nghiệm trong lĩnh vực chuỗi cung ứng và điều hành doanh nghiệp tại Bắc Mỹ.",
+        "Tại Mypalo, bà tham gia cố vấn chiến lược, đồng thời hỗ trợ xây dựng năng lực cho đội ngũ trẻ trong các chương trình khởi nghiệp và phát triển nghề nghiệp."
+      ]
+    },
+    {
+      name: "Bà Ngô Thị Hồng Hạnh",
+      role: "Cố vấn Hành chính & Nhân sự",
+      image: "/assets/photos/impact-3.jpg",
+      bio: [
+        "Bà Ngô Thị Hồng Hạnh tốt nghiệp ngành Quản trị Kinh doanh và có hơn 20 năm kinh nghiệm trong quản trị nhân sự.",
+        "Bà hiện đồng hành cùng Mypalo trong việc xây dựng hệ thống vận hành, quy trình nhân sự và phát triển năng lực nội bộ."
+      ]
+    }
+  ];
+  const volunteers = [
+    { name: "Lê Thị Ngọc Rinh", role: "CEO - Marketing", image: "/assets/photos/impact-1.jpg" },
+    { name: "Dương Minh Hiếu", role: "Senior Engineer", image: "/assets/photos/tran-van-thanh.jpg" },
+    { name: "Nguyễn Thị Nhật Tiến", role: "Communication Specialist", image: "/assets/photos/nhat-tien.jpeg" },
+    { name: "Trần Văn Thành", role: "Marketing Specialist", image: "/assets/photos/tran-van-thanh.jpg" },
+    { name: "Nguyễn Thị Hiếu Nhân", role: "Business Development", image: "/assets/photos/impact-2.jpg" },
+    { name: "Võ Duy Gia Hân", role: "Marketing Executive", image: "/assets/photos/impact-3.jpg" },
+    { name: "Trần Thị Phương Thảo", role: "Marketing Executive", image: "/assets/photos/impact-2.jpg" }
+  ];
+  const leadersEn = [
+    {
+      name: "Nguyen Thi Kim Hong",
+      role: "Founder & CEO",
+      image: "/assets/photos/impact-1.jpg",
+      bio: [
+        "For over two decades, Hong has dedicated her career to education and social development. She has helped thousands of young Vietnamese unlock their potential and build a proud future.",
+        "Previously, she managed major social-impact and training programs in Vietnam, connecting international resources with local workforce development initiatives."
+      ]
+    },
+    {
+      name: "Ms. Minh Chau Nguyen",
+      role: "Global Development Leader | Leadership Advisor",
+      image: "/assets/photos/minh-chau.jpg",
+      bio: [
+        "Minh Chau Nguyen brings 25+ years of global leadership experience to Mypalo, especially in youth development and social impact.",
+        "With degrees from the University of Washington and Harvard Business School, she supports learners with practical leadership, resilience, and global citizenship."
+      ]
+    },
+    {
+      name: "Ms. Jocelyn Tran",
+      role: "Entrepreneur & Business Leader | Strategic Advisor",
+      image: "/assets/photos/impact-2.jpg",
+      bio: [
+        "Ms. Jocelyn Tran has a trailblazing business career spanning North America and Southeast Asia, with deep expertise in operations and growth strategy.",
+        "At Mypalo, she advises on curriculum and mentorship strategy to help young talent grow with sustainable systems."
+      ]
+    },
+    {
+      name: "Ngo Thi Hong Hanh",
+      role: "Admin & HR advisor",
+      image: "/assets/photos/impact-3.jpg",
+      bio: [
+        "She is a Business Administration graduate with 20 years of experience supporting C-level leadership and HR operations.",
+        "Now, she brings organizational expertise and talent management experience to strengthen Mypalo's administrative foundation."
+      ]
+    }
+  ];
+  const volunteersEn = [
+    { name: "Le Thi Ngoc Rinh", role: "CEO - Marketing", image: "/assets/photos/impact-1.jpg" },
+    { name: "Duong Minh Hieu", role: "Senior Engineer", image: "/assets/photos/tran-van-thanh.jpg" },
+    { name: "Nguyen Thi Nhat Tien", role: "Communication Specialist", image: "/assets/photos/nhat-tien.jpeg" },
+    { name: "Tran Van Thanh", role: "Marketing Specialist", image: "/assets/photos/tran-van-thanh.jpg" },
+    { name: "Nguyen Thi Hieu Nhan", role: "Business Development", image: "/assets/photos/impact-2.jpg" },
+    { name: "Vo Duy Gia Han", role: "Marketing Executive", image: "/assets/photos/impact-3.jpg" },
+    { name: "Tran Thi Phuong Thao", role: "Marketing Executive", image: "/assets/photos/impact-2.jpg" }
+  ];
+
+  if (locale === "vi") {
+    return (
+      <SiteLayout locale={locale} currentPath="/about">
+        <main className="about-page">
+          <section className="about-intro">
+            <div className="container">
+              <h1>Chúng Tôi Là Ai</h1>
+              <p>{t.about.body[0]}</p>
+              <p>{t.about.body[1]}</p>
+              <p>{t.about.body[2]}</p>
+              <p>{t.about.body[3]}</p>
+            </div>
+          </section>
+
+          <section className="about-team">
+            <div className="container">
+              <h2>Gặp gỡ đội ngũ của chúng tôi</h2>
+              <div className="about-leader-list">
+                {leaders.map((leader, index) => (
+                  <article className={`about-leader ${index % 2 === 1 ? "reverse" : ""}`} key={leader.name}>
+                    <div className="about-leader-image">
+                      <Image src={leader.image} alt={leader.name} width={440} height={300} />
+                    </div>
+                    <div className="about-leader-copy">
+                      <h3>{leader.name}</h3>
+                      <p className="about-leader-role">{leader.role}</p>
+                      {leader.bio.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="about-volunteer">
+            <div className="container">
+              <h2>Gặp gỡ đội ngũ tình nguyện viên</h2>
+              <p>
+                Đội ngũ Mypalo đến từ nhiều lĩnh vực khác nhau, cùng làm việc vì mong muốn tạo ra giá trị tích cực cho cộng đồng.
+              </p>
+              <div className="about-volunteer-grid">
+                {volunteers.map((member) => (
+                  <article key={member.name}>
+                    <Image src={member.image} alt={member.name} width={260} height={300} />
+                    <h3>{member.name}</h3>
+                    <p>{member.role}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        </main>
+      </SiteLayout>
+    );
+  }
+
+  if (locale === "en") {
+    return (
+      <SiteLayout locale={locale} currentPath="/about">
+        <main className="about-page">
+          <section className="about-intro">
+            <div className="container">
+              <h1>Who We Are</h1>
+              <p>{t.about.body[0]}</p>
+              <p>{t.about.body[1]}</p>
+              <p>{t.about.body[2]}</p>
+            </div>
+          </section>
+
+          <section className="about-team">
+            <div className="container">
+              <h2>Meet Our Team</h2>
+              <div className="about-leader-list">
+                {leadersEn.map((leader, index) => (
+                  <article className={`about-leader ${index % 2 === 1 ? "reverse" : ""}`} key={leader.name}>
+                    <div className="about-leader-image">
+                      <Image src={leader.image} alt={leader.name} width={440} height={300} />
+                    </div>
+                    <div className="about-leader-copy">
+                      <h3>{leader.name}</h3>
+                      <p className="about-leader-role">{leader.role}</p>
+                      {leader.bio.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="about-volunteer">
+            <div className="container">
+              <p>
+                Our executives lead by example and guide us to accomplish great things every day. With experience across industries, their breadth and depth of expertise enable us to solve problems, realize our vision, and better serve our customers and each other.
+              </p>
+              <div className="about-volunteer-grid">
+                {volunteersEn.map((member) => (
+                  <article key={member.name}>
+                    <Image src={member.image} alt={member.name} width={260} height={300} />
+                    <h3>{member.name}</h3>
+                    <p>{member.role}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        </main>
+      </SiteLayout>
+    );
+  }
+
   return (
     <SiteLayout locale={locale} currentPath="/about">
       <main>
